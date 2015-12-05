@@ -40,7 +40,7 @@ public class ProcessRunnerTest
 		runner.run();
 
 		Awaitility.await().until(isFinished(runner));
-		assertThat("process runner should have succeeded", runner.isFinished(), is(true));
+		assertThat("process runner should have finished", runner.isFinished(), is(true));
 		assertThat("process runner should have succeeded", runner.isFailed(), is(false));
 		assertThat(runner.getExitCode(), not(0));
 	}
