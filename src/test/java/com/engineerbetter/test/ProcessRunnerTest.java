@@ -45,6 +45,7 @@ public class ProcessRunnerTest
 		assertThat(runner.getExitCode(), not(0));
 	}
 
+
 	@Test
 	public void successfulCommandFinishesWithZero()
 	{
@@ -60,10 +61,12 @@ public class ProcessRunnerTest
 		assertThat(runner.getExitCode(), is(0));
 	}
 
+
 	private String[] listDirectory()
 	{
 		return shellCommand(isWindows() ? "dir" : "ls");
 	}
+
 
 	private String[] shellCommand(String command)
 	{
@@ -71,10 +74,12 @@ public class ProcessRunnerTest
 		return Stream.concat(Stream.of(shell), Stream.of(command)).toArray(String[]::new);
 	}
 
+
 	private boolean isWindows()
 	{
 		return System.getProperty("os.name").startsWith("Windows");
 	}
+
 
 	private Callable<Boolean> isFinished(final ProcessRunner runner)
 	{

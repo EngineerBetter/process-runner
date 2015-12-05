@@ -100,19 +100,21 @@ public class ProcessRunner implements Runnable
 		return failed;
 	}
 
+
 	public String getStdOut()
 	{
 		return stdOutBuffer.toString();
 	}
+
 
 	public String getStdErr()
 	{
 		return stdErrBuffer.toString();
 	}
 
+
 	public Integer getExitCode()
 	{
 		return exitValue;
 	}
-
 }
